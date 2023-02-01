@@ -24,6 +24,8 @@
 Installing all packages with $ npm install.
 
 npm install webpack@4.46.0 --save-dev --save-exact
+$ npm install eslint@8.18.0 --save-dev
+$ npm install eslint-webpack-plugin@2.7.0 --save-dev
 
 
 Building the project using webpack with $ npm run build

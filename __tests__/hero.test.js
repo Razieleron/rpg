@@ -11,6 +11,13 @@ describe('Hero', () => {
     expect(hero.intelligence).toEqual(12);
     expect(hero.dexterity).toEqual(18);
     expect(hero.stamina).toEqual(9);
-    
   });
+
+  test('should create adjusted stats based on race modifiers', () => {
+    const hero = new Hero('Raina Lightfoot', 'Female', 'Elf', 'Archer', 10, 12, 18, 9, 10, 12, 18, 9)
+    hero.statAdjust();
+    expect(hero.adjDexterity).toEqual(27);
+  })
+
+  
 });
