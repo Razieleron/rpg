@@ -8,7 +8,7 @@ describe('Inventory', () => {
     
     test('should add an item to the inventory', () => {
       const inventory = new Inventory();
-      inventory.addItem("the entire library of congress");
+      inventory.addItem("sock");
       expect(inventory.contents).toEqual(["sock"])
     });
 });
