@@ -1,7 +1,8 @@
-//import Hero from './../src/hero.js';
-
 export default function Inventory() {
     this.contents = []
 }
 
-//this.size = Hero.strength * 2;
+Inventory.prototype.addItem = function(item) {
+  this.contents.push(item);
+}
+

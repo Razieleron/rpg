@@ -5,5 +5,12 @@ describe('Inventory', () => {
         const inventory = new Inventory()
         expect(inventory.contents).toEqual([])
     });
+    
+    test('should add an item to the inventory', () => {
+      const inventory = new Inventory();
+      inventory.addItem("the entire library of congress");
+      expect(inventory.contents).toEqual(["sock"])
+    });
 });
+
 
