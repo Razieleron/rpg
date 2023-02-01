@@ -20,7 +20,12 @@
 * _in a simple_
 * _easy-to-understand_
 * _format_
+
 Installing all packages with $ npm install.
+
+npm install webpack@4.46.0 --save-dev --save-exact
+
+
 Building the project using webpack with $ npm run build
 Starting a development server with $ npm run start
 Linting JS files in the src folder with $ npm run lint
