@@ -1,4 +1,6 @@
 import Hero from './../src/js/hero.js';
+import Inventory from "./../src/js/inventory.js";
+import Weapon from "./../src/js/weapon.js";
 
 describe('Hero', () => {
   test('should create a hero with filled out attributes', () => {
@@ -19,3 +21,10 @@ describe('Hero', () => {
     expect(hero.adjDexterity).toEqual(27);
   });
 });
+
+  test('should create an inventory object within a hero object', () => {
+    const hero = new Hero('Raina Lightfoot', 'Female', 'Elf', 'Archer', 10, 12, 18, 9, 10, 12, 18, 9)
+    const inventory = new Inventory();
+    hero.inventory = inventory;
+    expect(hero.inventory).toEqual({"contents": []});
+  })

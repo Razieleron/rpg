@@ -1,3 +1,6 @@
+import Inventory from "./inventory.js";
+import Weapon from "./weapon.js";
+
 export default function Hero(name, sex, race, job, strength, intelligence, dexterity, stamina, adjStrength, adjIntelligence, adjDexterity, adjStamina) {
     this.name = name;
     this.sex = sex;
@@ -22,6 +25,10 @@ export default function Hero(name, sex, race, job, strength, intelligence, dexte
     } 
   }
 
+  Hero.prototype.createInventory = function() {
+    let inventory = new Inventory();
+    this.inventory = inventory;
+  }
   
 
 
