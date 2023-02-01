@@ -28,3 +28,14 @@ describe('Hero', () => {
     hero.inventory = inventory;
     expect(hero.inventory).toEqual({"contents": []});
   })
+
+  test('should create a weapon object within an inventory object within a hero object', () => {
+    const hero = new Hero('Raina Lightfoot', 'Female', 'Elf', 'Archer', 10, 12, 18, 9, 10, 12, 18, 9)
+    const inventory = new Inventory();
+    hero.inventory = inventory;
+    const angelBow = new Weapon("Angel's Bow", "Bow", ["dexterity", "intelligence"], 2.43)
+    
+    hero.inventory.addItem(angelBow);
+    expect(hero.inventory.contents).toEqual("what is going on?");
+
+  })
