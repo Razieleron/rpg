@@ -22,6 +22,8 @@ export default function Hero(name, sex, race, job, strength, intelligence, dexte
     } 
   }
 
+  
+
 
 /* 
 if race = ogre, strength = strength * 1.5

@@ -17,7 +17,5 @@ describe('Hero', () => {
     const hero = new Hero('Raina Lightfoot', 'Female', 'Elf', 'Archer', 10, 12, 18, 9, 10, 12, 18, 9)
     hero.statAdjust();
     expect(hero.adjDexterity).toEqual(27);
-  })
-
-  
+  });
 });
