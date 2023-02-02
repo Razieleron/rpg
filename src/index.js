@@ -1,8 +1,9 @@
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import Triangle from './js/triangle.js';
-import Rectangle from './js/rectangle.js';
+import Hero from './../src/js/hero.js';
+import Inventory from "./../src/js/inventory.js";
+import Weapon from "./../src/js/weapon.js";
 
 function handleTriangleForm(event) {
   event.preventDefault();

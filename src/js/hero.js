@@ -4,6 +4,7 @@ import Weapon from "./weapon.js";
 export default function Hero(name, sex, race, job, strength, intelligence, dexterity, stamina, adjStrength, adjIntelligence, adjDexterity, adjStamina) {
     this.name = name;
     this.sex = sex;
+    // this.sex = 'yes please'
     this.race = race;
     this.job = job;
     this.strength = strength;
@@ -14,9 +15,20 @@ export default function Hero(name, sex, race, job, strength, intelligence, dexte
     this.adjIntelligence = adjIntelligence;
     this.adjDexterity = adjDexterity;
     this.adjStamina = adjStamina;
-    /* this.equipment = equipment but have it be another object type?
-     */
+    this.inventory = new Inventory();
+    //this.equipment = new Equipment();
   }
+
+  // Hero.prototype.checkEquipped = function {
+  //   start by re zeroing
+  //   this.inventory 
+  //   for each
+  //   if equipped = true
+  //   this.defense += 
+  // }
+  
+// let tempHolder = inventory.contents.slice(0,1)
+// Hero.equiptment.push(tempHolder) 
 
   Hero.prototype.statAdjust = function() {
     /* istanbul ignore else */
@@ -25,10 +37,6 @@ export default function Hero(name, sex, race, job, strength, intelligence, dexte
     } 
   }
 
-  Hero.prototype.createInventory = function() {
-    let inventory = new Inventory();
-    this.inventory = inventory;
-  }
   
 
 

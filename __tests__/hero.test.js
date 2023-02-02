@@ -36,6 +36,6 @@ describe('Hero', () => {
     const angelBow = new Weapon("Angel's Bow", "Bow", ["dexterity", "intelligence"], 2.43)
     
     hero.inventory.addItem(angelBow);
-    expect(hero.inventory.contents).toEqual("what is going on?");
+    expect(hero.inventory.contents).toEqual([{"baseDamageRatio": 2.43, "modifier": ["dexterity", "intelligence"], "name": "Angel's Bow", "type": "Bow"}]);
 
   })
