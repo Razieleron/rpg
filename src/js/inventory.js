@@ -1,9 +1,10 @@
-export default function Inventory() {
+export default class Inventory {
+  constructor() {
     this.contents = []
-}
-
-Inventory.prototype.addItem = function(item) {
-  this.contents.push(item);
+  }
+  addItem(item) {
+    this.contents.push(item);
+  }
 }
 
 // function Equipment() {
