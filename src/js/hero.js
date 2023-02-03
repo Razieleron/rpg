@@ -1,52 +1,47 @@
 import Inventory from "./inventory.js";
 import Weapon from "./weapon.js";
 
-// class Triangle {
-//   constructor(side1, side2, side3) {
-//     this.side1 = side1;
-//     this.side2 = side2;
-//     this.side3 = side3;
-//   }
-
-//   checkType() {
-//     //Function body goes here.
-//   }    
-// }
 
 export default class Hero {
-    constructor(name, sex, race, job, strength, intelligence, dexterity, stamina, adjStrength, adjIntelligence, adjDexterity, adjStamina) {
-      this.name = name;
-      this.sex = sex;
-      this.race = race;
-      this.job = job;
-      this.strength = strength;
-      this.intelligence = intelligence;
-      this.dexterity = dexterity;
-      this.stamina = stamina;
-      this.adjStrength = adjStrength;
-      this.adjIntelligence = adjIntelligence;
-      this.adjDexterity = adjDexterity;
-      this.adjStamina = adjStamina;
-      this.inventory = new Inventory();
-
-      // this.totalActionPoints = 4;
-      /*probably gotta make a skill object that will be like an array or smth to go inside of the weapon object and maybe have a parameter of each skill be like a number of action points?
-      weapon {
-        actionName: [#ofactionpoints, damageRange, meleeOrRanged]
-      }
-      angelBow.skill.flurryOfArrows[2]*1.8
-    
-       */
-      // this.currentActionPoints = currentActionPoints;
+  constructor(name, sex, race, job, strength, intelligence, dexterity, stamina, adjStrength, adjIntelligence, adjDexterity, adjStamina, currentActionPoints) {
+    this.name = name;
+    this.sex = sex;
+    this.race = race;
+    this.job = job;
+    this.strength = strength;
+    this.intelligence = intelligence;
+    this.dexterity = dexterity;
+    this.stamina = stamina;
+    this.adjStrength = adjStrength;
+    this.adjIntelligence = adjIntelligence;
+    this.adjDexterity = adjDexterity;
+    this.adjStamina = adjStamina;
+    this.inventory = new Inventory();
+    this.totalActionPoints = 4;
+    this.currentActionPoints = currentActionPoints;
+  }
+    resetActionPoints() {
+      let totalActionPoints = parseInt(this.totalActionPoints);
+      this.currentActionPoints = totalActionPoints;
     }
-    statAdjust() {
-      /* istanbul ignore else */
-      if (this.race === "Elf") {
-        this.adjDexterity = this.dexterity * 1.5;
-      }; 
-    };
-  };
 
+    useSkill(skill) {
+      skill.actionPoints;
+      this.currentActionPoints = this.currentActionPoints - skill.actionPoints;
+    }
+  /*probably gotta make a skill object that will be like an array or smth to go inside of the weapon object and maybe have a parameter of each skill be like a number of action points?
+    weapon {
+      actionName: [#ofactionpoints, damageRange, meleeOrRanged]
+    }
+    angelBow.skill.flurryOfArrows[2]*1.8    
+     */
+  statAdjust() {
+    /* istanbul ignore else */
+    if (this.race === "Elf") {
+      this.adjDexterity = this.dexterity * 1.5;
+    }
+  };
+}
 
 
 /* 

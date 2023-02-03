@@ -9,15 +9,17 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
-  devtool: 'eval-source-map',
   devServer: {               
     contentBase: './dist'    
   },
+  devtool: 'eval-source-map',
   plugins: [
     new ESLintPlugin(),
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin({
+      verbose: true
+    }),
     new HtmlWebpackPlugin({
-      title: 'Shape Tracker',
+      title: 'RPG',
       template: './src/index.html',
       inject: 'body'
     })
@@ -48,7 +50,7 @@ module.exports = {
         use: [
           'html-loader'
         ]
-      },
+      }
     ]
   }
 };

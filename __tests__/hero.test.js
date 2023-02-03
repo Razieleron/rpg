@@ -33,9 +33,21 @@ describe('Hero', () => {
     const hero = new Hero('Raina Lightfoot', 'Female', 'Elf', 'Archer', 10, 12, 18, 9, 10, 12, 18, 9)
     const inventory = new Inventory();
     hero.inventory = inventory;
-    const angelBow = new Weapon("Angel's Bow", "Bow", ["dexterity", "intelligence"], 2.43)
+    const angelBow = new Weapon("Angel's Bow", "Bow", ["dexterity", "intelligence"], 2.43, [1,2,3,4])
     
     hero.inventory.addItem(angelBow);
-    expect(hero.inventory.contents).toEqual([{"baseDamageRatio": 2.43, "modifier": ["dexterity", "intelligence"], "name": "Angel's Bow", "type": "Bow"}]);
+    expect(hero.inventory.contents).toEqual([{"baseDamageRatio": 2.43, "modifier": ["dexterity", "intelligence"], "name": "Angel's Bow", "skills": new Set ([1,2,3,4]), "type": "Bow"}]);
+  });
+  
+  test('should set currentActionPoints to totalActionPoints', () => {
+    const hero = new Hero('Raina Lightfoot', 'Female', 'Elf', 'Archer', 10, 12, 18, 9, 10, 12, 18, 9, [], 4, 0);
+    hero.resetActionPoints();
 
-  })
+    expect(hero.currentActionPoints).toEqual(4);
+    
+  test('should subtract skills action point cost from heros current action points'() => {
+    const hero = new Hero('Raina Lightfoot', 'Female', 'Elf', 'Archer', 10, 12, 18, 9, 10, 12, 18, 9, [], 4, 0);
+    const angelBow = new Weapon("Angel's Bow", "Bow", ["dexterity", "intelligence"], 2.43)
+  })  
+  });
+

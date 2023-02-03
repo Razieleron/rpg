@@ -2,29 +2,11 @@
 
 
 export default class Skill {
-  constructor(actionPoints, baseDamage, ranged) {
+  constructor(name, actionPoints, baseDamage, range) {
+    this.name = name
     this.actionPoints = actionPoints;
     this.baseDamage = baseDamage;
-    this.melee = false;
-    this.ranged = false;
-
-
-  //   if (skill[2] === ranged) {
-  //     skillRange = ranged,
-  //   } else {
-  //     skillRange = melee
-  //   }
-    
-  //   if (ranged === true) {
-  //     this.melee = false;
-  //     this.ranged = true;
-  //   } else {
-  //   this.melee = true;
-  //   this.ranged = false;
-  // }
-  // let flurryOfArrows = new Skill(1, 5, true)
-
-
+    this.range = range;
   }
 }
 
